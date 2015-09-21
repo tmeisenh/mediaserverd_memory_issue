@@ -14,20 +14,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSURL *settingsURL = [[NSBundle mainBundle] URLForResource:@"ServerSettings" withExtension:@"plist"];
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfURL:settingsURL];
+    NSURL *serverURL = [NSURL URLWithString:settings[@"ServerURL"]];
+    self.m3u8PlaylistUrl = [serverURL URLByAppendingPathComponent:@"playlist.m3u8"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"Danger - memory warning!!!");
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AVPlayerModal"]) {
         self.avplayerViewController = segue.destinationViewController;
-//        AVPlayer *player = [[AVPlayer alloc] initWithURL:self.m3u8PlaylistUrl];
-//        self.avplayerViewController.player = player;
-        
+        AVPlayer *player = [[AVPlayer alloc] initWithURL:self.m3u8PlaylistUrl];
+        self.avplayerViewController.player = player;
     }
 }
 
