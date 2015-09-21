@@ -20,7 +20,4 @@ UATs/results
 doxygen/
 .bundle
 
-*.ts
-*.mp4
-*.m3u8
 mediaserverd_memory_issue/mediaserverd_memory_issue.xcodeproj/project.xcworkspace/xcuserdata/**
