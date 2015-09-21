@@ -171,7 +171,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ../video_server/ffmpeg_encode.sh;
+			shellScript = "#../video_server/ffmpeg_encode.sh";
 		};
 		5AF3508B1BB059B50024AA0E /* Update Hostname */ = {
 			isa = PBXShellScriptBuildPhase;

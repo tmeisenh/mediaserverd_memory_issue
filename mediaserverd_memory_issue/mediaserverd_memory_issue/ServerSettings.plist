@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>ServerURL</key>
-	<string>http://127.0.0.1:8000</string>
+	<string>http://ionic-xcode7:8000</string>
 </dict>
 </plist>
